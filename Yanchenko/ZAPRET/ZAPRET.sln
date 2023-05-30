@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZAPRET", "ZAPRET.csproj", "{D0AF0756-C776-4A64-B121-E8125BF5C093}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D0AF0756-C776-4A64-B121-E8125BF5C093}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0AF0756-C776-4A64-B121-E8125BF5C093}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0AF0756-C776-4A64-B121-E8125BF5C093}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0AF0756-C776-4A64-B121-E8125BF5C093}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A718FC6B-9FBB-4F00-B045-1E2C03C75ED1}
+	EndGlobalSection
+EndGlobal
