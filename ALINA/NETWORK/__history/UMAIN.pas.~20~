@@ -1,0 +1,182 @@
+unit UMAIN;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Registry, WinSock;
+
+type
+  TForm1 = class(TForm)
+    GroupBox1: TGroupBox;
+    GroupBox2: TGroupBox;
+    GroupBox3: TGroupBox;
+    GroupBox4: TGroupBox;
+    Label1: TLabel;
+    Label2: TLabel;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Button1: TButton;
+    Button2: TButton;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Edit3: TEdit;
+    Edit4: TEdit;
+    Edit5: TEdit;
+    Button3: TButton;
+    procedure FormCreate(Sender: TObject);
+    function GetNTDomainName: string;
+    function readreg(root:string; key:string; val:string):string;
+    procedure writereg(root:string; key:string; val:string);
+    procedure delreg(root:string; key:string; val:string);
+    procedure setIP(ip:string;mask:string);
+    procedure Button1Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+
+function Tform1.readreg(root:string; key:string; val:string):string;
+var
+  Reg: TRegistry;
+begin
+  Reg := TRegistry.Create;
+  try
+    Reg.RootKey := HKEY_LOCAL_MACHINE;
+    if Reg.OpenKey(key, False) then
+    begin
+      readreg:=(Reg.ReadString(val));
+      Reg.CloseKey;
+    end;
+  finally
+    Reg.Free;
+  end;
+end;
+
+procedure Tform1.writereg(root:string; key:string; val:string);
+ var
+  Reg: TRegistry;
+begin
+  Reg := TRegistry.Create;
+  try
+    Reg.RootKey := HKEY_CURRENT_USER;
+    if Reg.OpenKey(root, True) then
+    begin
+      Reg.WriteString(key, val);
+      Reg.CloseKey;
+    end;
+  finally
+    Reg.Free;
+  end;
+end;
+
+
+procedure TForm1.Button3Click(Sender: TObject);
+begin
+setIP(edit3.text,edit4.text);
+end;
+
+procedure Tform1.delreg(root:string; key:string; val:string);
+var
+  Reg: TRegistry;
+begin
+  Reg := TRegistry.Create;
+  try
+    Reg.RootKey := HKEY_CURRENT_USER;
+    if Reg.DeleteKey(key) then
+      ShowMessage('Key deleted')
+    else
+      ShowMessage('Key not found');
+  finally
+    Reg.Free;
+  end;
+end;
+
+procedure Tform1.setIP(ip:string;mask:string);
+var
+  Reg: TRegistry;
+begin
+  Reg := TRegistry.Create;
+  try
+    Reg.RootKey := HKEY_LOCAL_MACHINE;
+    if Reg.OpenKey('SYSTEM\CurrentControlSet\Services\Tcpip\Parameters', True) then
+    begin
+      Reg.WriteString('IPAddress', ip);
+      Reg.WriteString('SubnetMask', mask);
+      Reg.CloseKey;
+    end;
+  finally
+    Reg.Free;
+  end;
+end;
+
+
+
+function GetComputerNetName: string;
+var
+  buffer: array[0..255] of char;
+  size: dword;
+begin
+  size := 256;
+  if GetComputerName(buffer, size) then
+    Result := buffer
+  else
+    Result := ''
+end;
+
+function GetLocalIP: String;
+const WSVer = $101;
+var
+  wsaData: TWSAData;
+  P: PHostEnt;
+  Buf: array [0..127] of Char;
+begin
+  Result := '';
+  if WSAStartup(WSVer, wsaData) = 0 then begin
+    if GetHostName(@Buf, 128) = 0 then begin
+      P := GetHostByName(@Buf);
+      if P <> nil then Result := iNet_ntoa(PInAddr(p^.h_addr_list^)^);
+    end;
+    WSACleanup;
+  end;
+end;
+
+function TForm1.GetNTDomainName: string;
+  var hReg: TRegistry;
+begin
+  hReg := TRegistry.Create;
+  hReg.RootKey := HKEY_LOCAL_MACHINE;
+  hReg.OpenKey('HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters', false);
+  Edit2.text := hReg.ReadString('ICSDomain');
+  hReg.CloseKey;
+  hReg.Destroy;
+end;
+
+
+procedure TForm1.Button1Click(Sender: TObject);
+var
+ s:string;
+begin
+s:=readreg('','Software\Microsoft\Windows\CurrentVersion','ProgramFilesDir');
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+ Edit1.Text:= GEtComputerNetName;
+ Edit2.Text:= GetNTDomainName;
+ Edit3.TExt:= GetLocalIP;
+ Edit4.Text:='255.255.255.0';
+end;
+
+end.

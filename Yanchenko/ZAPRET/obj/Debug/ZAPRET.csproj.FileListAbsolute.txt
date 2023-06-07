@@ -9,3 +9,14 @@ S:\Контрольные\UNIVER\3-kurs\KURS3LETO\Yanchenko\ZAPRET\obj\Debug\ZAP
 S:\Контрольные\UNIVER\3-kurs\KURS3LETO\Yanchenko\ZAPRET\obj\Debug\ZAPRET.csproj.CoreCompileInputs.cache
 S:\Контрольные\UNIVER\3-kurs\KURS3LETO\Yanchenko\ZAPRET\obj\Debug\ZAPRET.exe
 S:\Контрольные\UNIVER\3-kurs\KURS3LETO\Yanchenko\ZAPRET\obj\Debug\ZAPRET.pdb
+D:\UNIVER\3-kurs\KURS3LETO\Yanchenko\ZAPRET\bin\Debug\ZAPRET.exe.config
+D:\UNIVER\3-kurs\KURS3LETO\Yanchenko\ZAPRET\bin\Debug\ZAPRET.exe
+D:\UNIVER\3-kurs\KURS3LETO\Yanchenko\ZAPRET\bin\Debug\ZAPRET.pdb
+D:\UNIVER\3-kurs\KURS3LETO\Yanchenko\ZAPRET\obj\Debug\ZAPRET.csproj.AssemblyReference.cache
+D:\UNIVER\3-kurs\KURS3LETO\Yanchenko\ZAPRET\obj\Debug\ZAPRET.csproj.SuggestedBindingRedirects.cache
+D:\UNIVER\3-kurs\KURS3LETO\Yanchenko\ZAPRET\obj\Debug\ZAPRET.Form1.resources
+D:\UNIVER\3-kurs\KURS3LETO\Yanchenko\ZAPRET\obj\Debug\ZAPRET.Properties.Resources.resources
+D:\UNIVER\3-kurs\KURS3LETO\Yanchenko\ZAPRET\obj\Debug\ZAPRET.csproj.GenerateResource.cache
+D:\UNIVER\3-kurs\KURS3LETO\Yanchenko\ZAPRET\obj\Debug\ZAPRET.csproj.CoreCompileInputs.cache
+D:\UNIVER\3-kurs\KURS3LETO\Yanchenko\ZAPRET\obj\Debug\ZAPRET.exe
+D:\UNIVER\3-kurs\KURS3LETO\Yanchenko\ZAPRET\obj\Debug\ZAPRET.pdb
