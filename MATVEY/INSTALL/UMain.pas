@@ -26,6 +26,7 @@ type
     Edit2: TEdit;
     Label3: TLabel;
     Button6: TButton;
+    Button7: TButton;
     procedure Button4Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
@@ -221,21 +222,11 @@ begin
 p:=extractfilepath(paramstr(0))+'\'+'TMP';
 CreateDirEx(p);
 Savedialog1.InitialDir:=p+'\';
-{  if OpenDialog1.Execute  then
-  begin
-   EDit2.TExt:=OpenDialog1.FileName;
 
-   MakeLNK(EDit2.TExt);
-
-  end;}
 
 
   // тут мы собственно выполняем все действия по формированию пакета
 
-  //if SaveDialog1.Execute then
-    //begin
-     //s:=Savedialog1.filename;
-     //if (pos('.stp',s)=0) then s:=s+'.stp';
      assignfile(f,extractfilepath(paramstr(0))+'\install.stp');
      rewrite(f);
      assignfile(fi,extractfilepath(paramstr(0))+'\install.lst');
@@ -309,7 +300,6 @@ begin
   begin
   ListBox1.Items.Clear;
    ListBox1.Items:=OpenDialog1.Files;
-
   end;
 
 end;
