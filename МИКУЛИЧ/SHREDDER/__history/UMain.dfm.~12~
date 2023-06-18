@@ -23303,6 +23303,7 @@ object Form1: TForm1
     Width = 394
     Height = 17
     Anchors = [akLeft, akTop, akRight]
+    Smooth = True
     TabOrder = 4
   end
   object OpenDialog1: TOpenDialog

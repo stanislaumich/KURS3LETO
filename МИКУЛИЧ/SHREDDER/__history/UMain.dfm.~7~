@@ -23223,9 +23223,7 @@ object Form1: TForm1
       Width = 105
       Height = 17
       Caption = 'DoD  5220.22-M'
-      Checked = True
       TabOrder = 0
-      TabStop = True
     end
     object RadioButton2: TRadioButton
       Left = 16
@@ -23274,7 +23272,7 @@ object Form1: TForm1
     Width = 121
     Height = 21
     TabOrder = 1
-    Text = 's:\jW8UdxnYgIg2.jpg'
+    Text = 'Edit1'
   end
   object BitBtn1: TBitBtn
     Left = 219
@@ -23293,7 +23291,6 @@ object Form1: TForm1
     Anchors = [akLeft, akRight, akBottom]
     Caption = #1057#1058#1045#1056#1045#1058#1068'!'
     TabOrder = 3
-    OnClick = BitBtn2Click
     ExplicitTop = 200
     ExplicitWidth = 405
   end
@@ -23303,6 +23300,7 @@ object Form1: TForm1
     Width = 394
     Height = 17
     Anchors = [akLeft, akTop, akRight]
+    Position = 30
     TabOrder = 4
   end
   object OpenDialog1: TOpenDialog

@@ -50,97 +50,72 @@ implementation
 // ----------------------------
 procedure TForm1.Method1;
 var
-    f: file of byte;
-    Size: Longint;
-    i: Longint;
-    c: byte;
+ f:file of byte;
+ Size:Longint;
+ i:longint;
 begin
-    {
-      три прохода по файлу.
-      ¬ первый раз файл перезаписываетс€ нулевыми битами,
-      второй Ц единичными битами,
-      третий - случайной последовательностью из нулей и единиц.
-    }
-    Randomize;
-    AssignFile(f, Edit1.Text);
-    ProgressBar1.min := 0;
-    Reset(f);
-    Size := Filesize(f);
-    ProgressBar1.Max := 3;
-    ProgressBar1.Position := 0;
-    c := 0;
-    For i := 0 to Size - 1 do
-    begin
-        seek(f, i);
-        write(f, c);
-    end;
-    ProgressBar1.Position := 1;
-    Application.ProcessMessages;
-    c := 255;
-    For i := 0 to Size - 1 do
-    begin
-        seek(f, i);
-        write(f, c);
-    end;
-    ProgressBar1.Position := 2;
-    Application.ProcessMessages;
-
-    For i := 0 to Size - 1 do
-    begin
-        seek(f, i);
-        c := Random(255);
-        write(f, c);
-    end;
-    ProgressBar1.Position := 3;
-    Application.ProcessMessages;
-    CloseFile(f);
+{
+ три прохода по файлу.
+ ¬ первый раз файл перезаписываетс€ нулевыми битами,
+ второй Ц единичными битами,
+ третий - случайной последовательностью из нулей и единиц.
+}
+AssignFile(f,Edit1.Text);
+Size:=Filesize(f);
+Reset(f);
+For i:=0 to Size-1 do
+ begin
+  seek(f,i);
+  write(f,0);
+ end;
+CloseFile(f);
 end;
 
 procedure TForm1.Method2;
 var
-    f: file;
+ f:file;
 begin
     If OpenDialog1.Execute() then
-        Edit1.Text := OpenDialog1.FileName;
+        Edit1.text := OpenDialog1.FileName;
 end;
 
 procedure TForm1.Method3;
 var
-    f: file;
+ f:file;
 begin
     If OpenDialog1.Execute() then
-        Edit1.Text := OpenDialog1.FileName;
+        Edit1.text := OpenDialog1.FileName;
 end;
 
 procedure TForm1.Method4;
 var
-    f: file;
+ f:file;
 begin
     If OpenDialog1.Execute() then
-        Edit1.Text := OpenDialog1.FileName;
+        Edit1.text := OpenDialog1.FileName;
 end;
 
 procedure TForm1.Method5;
 var
-    f: file;
+ f:file;
 begin
     If OpenDialog1.Execute() then
-        Edit1.Text := OpenDialog1.FileName;
+        Edit1.text := OpenDialog1.FileName;
 end;
 
 procedure TForm1.Method6;
 var
-    f: file;
+ f:file;
 begin
     If OpenDialog1.Execute() then
-        Edit1.Text := OpenDialog1.FileName;
+        Edit1.text := OpenDialog1.FileName;
 end;
 
 // -------------------------------------------
 procedure TForm1.BitBtn1Click(Sender: TObject);
 begin
     If OpenDialog1.Execute() then
-        Edit1.Text := OpenDialog1.FileName;
+        Edit1.text := OpenDialog1.FileName;
 end;
 
 procedure TForm1.BitBtn2Click(Sender: TObject);
@@ -157,7 +132,7 @@ begin
         Method5;
     If RadioButton6.Checked then
         Method6;
-    ShowMessage('«атирание файла завершено успешно');
+ ShowMessage('«атирание файла завершено успешно');
 end;
 
 end.
