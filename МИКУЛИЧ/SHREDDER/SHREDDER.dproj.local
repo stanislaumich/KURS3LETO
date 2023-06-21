@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>1899.12.30 00:00:00.000.699,S:\_programming\Project2.dproj=S:\Контрольные\UNIVER\3-kurs\KURS3LETO\МИКУЛИЧ\SHREDDER\SHREDDER.dproj</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.898,S:\_programming\Unit1.dfm=S:\Контрольные\UNIVER\3-kurs\KURS3LETO\МИКУЛИЧ\SHREDDER\UMain.dfm</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.898,S:\_programming\Unit1.pas=S:\Контрольные\UNIVER\3-kurs\KURS3LETO\МИКУЛИЧ\SHREDDER\UMain.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.561,=S:\_programming\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.898,S:\Контрольные\UNIVER\3-kurs\KURS3LETO\МИКУЛИЧ\SHREDDER\UMain.pas=S:\_programming\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.898,S:\Контрольные\UNIVER\3-kurs\KURS3LETO\МИКУЛИЧ\SHREDDER\UMain.dfm=S:\_programming\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.699,S:\Контрольные\UNIVER\3-kurs\KURS3LETO\МИКУЛИЧ\SHREDDER\SHREDDER.dproj=S:\_programming\Project2.dproj</Transaction>
   </Transactions>
 </BorlandProject>

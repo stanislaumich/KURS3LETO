@@ -260,9 +260,6 @@ begin
 end;
 
 procedure TForm1.Method6;
-const
-a:array[5..31] of byte=($55,$AA,$92,$49,$24,$00,$11,$22,$33,$44,$55,$66,$77,
-$88,$99,$AA,$BB,$CC,$DD,$EE,$FF,$92,$49,$24,$6D,$B6,$DB);
 var
     f: file of byte;
     Size: Longint;
@@ -307,7 +304,7 @@ begin
     ProgressBar1.min := 0;
     Reset(f);
     Size := Filesize(f);
-    ProgressBar1.Max := 35;
+    ProgressBar1.Max := 7;
     ProgressBar1.Position := 0;
 
         for j := 1 to 4 do begin
@@ -322,8 +319,8 @@ begin
         Application.ProcessMessages;
         end;
 
-        for j := 5 to 31 do begin
-        c := a[j];
+        for j := 1 to 4 do begin
+        c := 255;
         For i := 0 to Size - 1 do
         begin
             seek(f, i);
@@ -334,7 +331,6 @@ begin
         end;
 
         for j := 1 to 4 do
-        begin
             For i := 0 to Size - 1 do
             begin
                 seek(f, i);
@@ -343,7 +339,7 @@ begin
             end;
         ProgressBar1.Position := ProgressBar1.Position + 1;
         Application.ProcessMessages;
-       end;
+
     CloseFile(f);
 
 
